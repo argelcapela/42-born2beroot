@@ -91,11 +91,10 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 <div align="center">
 
 # 👑
-	
-</div>    
-<br>
 
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
-<i>Fique a vontade para conferir meu estudo sobre a 42-born2beroot:</i><br>
-<a href="https://docs.google.com/presentation/d/1VWdLQyzHBcBy6y3QFPF3tIc-R_6kzcePYOegFBBWdaQ/edit?usp=sharing"></a>
+<i>Fique a vontade para conferir meu estudo sobre a 42-born2beroot, clicando no icone bonitinho abaixo. Ah! Se quiser deixe um comentário também: 😎</i><br><br>
+<a href="https://docs.google.com/presentation/d/1VWdLQyzHBcBy6y3QFPF3tIc-R_6kzcePYOegFBBWdaQ/edit?usp=sharing"><img src="https://i.imgur.com/feIp2xa.png" alt="conferir estudo"></a>
+<br>
+</div>   
