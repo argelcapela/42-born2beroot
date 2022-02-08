@@ -1,7 +1,9 @@
 #!bin/bash
+
 ##
 ## Getting Datas from system:
 ##
+
 
 ARCH=$(uname -snrvmo)
 PCPU=$(cat /proc/cpuinfo | grep 'physical id' | uniq | wc -l)
@@ -19,18 +21,19 @@ USE_OF_CPU=$(top -bn1 | grep Cpu | cut -c 9- | awk '{printf("%.1f%%"), $1 + $3}'
 
 LBOOT=$(who -b | awk '{print $3 " " $4}')
 
-CHECK_IF_THERE_IS_LVM=$(lvdisplay)
-LVMU=$( if [ $? -eq 0 ]; then echo yes; else echo no; fi )
+CHECK_IF_THERE_IS_LVM=$(cat /etc/fstab | grep /dev/mapper/ | wc -l)
+LVMU=$( if [ ${CHECK_IF_THERE_IS_LVM} -eq 0 ]; then echo no; else echo yes; fi )
 
 NUMBER_OF_ACTIVE_CONNECTIONS=$(netstat -t | grep ESTABLISHED | wc -l)
 NTCP=$(if [ ${NUMBER_OF_ACTIVE_CONNECTIONS} -eq 0 ]; then echo 0; else echo ${NUMBER_OF_ACTIVE_CONNECTIONS} ESTABLISHED; fi)
 
 ULOG=$(users | wc -w)
 
-IP=$(ifconfig -a | grep inet | sed -n 1p | awk '{print $2}')
-MAC=$(ifconfig -a | grep ether | cut -c 15-31)
+IP=$(hostname -I | awk '{ print($1) }')
 
-SUDO=$(cat /var/log/sudo/sudo_log | wc -l | awk '{print $1/2}')
+MAC=$(cat /sys/class/net/*/address | head -n 1)
+
+SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
 ##
 ## Display:
