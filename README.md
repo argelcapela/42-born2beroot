@@ -36,7 +36,7 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 <div class="col-12">
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<li><a href="#overview">42-born2beroot Overview</a></li>
+<li><a href="#overview">42-born2beroot-guide (Google Slides)</a></li>
 <br>	
 <br>		
 <div class="col-12">
