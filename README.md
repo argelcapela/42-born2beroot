@@ -53,8 +53,8 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
     </td>
   </tr>
 </table>
-<br><br>
-<!--<i>Obrigado Especial 🎁 a Welton, Krebs, João, Moacir e outros cadetes que me auxiliaram no entendimento dos procedimentos para desenvolver esse projeto. Vocês são tops! Quando eu crescer quero ser como vocês rsrs Sucesso! 👽✌😁👍 </i>-->
+<br>
+<i>Obrigado Especial 🎁 a <a href="https://github.com/caroldaniel">Carolina Daniel</a> pelos guias mais incríveis e mais organizados e completos de toda a 42, me ensinou muito sobre organização, documentação e me deu uma luz no início da born. 👽✌😁👍 </i>
 </div>
 	
 <div class="col-12">
