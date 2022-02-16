@@ -94,12 +94,55 @@ PORUD=$(df -Bg | grep /dev/ | grep -v /boot | awk '{FULLD += $2} {USEDD += $3}  
 # 6) The current utilization rate of your processors as a percentage:
 USE_OF_CPU=$(top -bn1 | grep Cpu | cut -c 9- | awk '{printf("%.1f%%"), $1 + $3}')
 
+# /* 
+#     What is 'utilization rate of processor'? 
+#     Formula:  1 - (I/O Time of a processor, so time that CPU wait a proccess Input or Output) ^ Number of processes. 
+#     "Represents the time that a process is being processed by CPU."  
+#     
+#                            top -bn1 : Outputs in screen all processors being executed now, in a mode that can be easily piped for others commands. 
+#                                 top : Display all processors being executed in a mini processes monitor program, which isn't so flexible with PIPE etc. The important column to this script is x and y because they represent x and y.
+#                                  -b : Display the top result in batch mode, like a cat, so this result can be easily piped and receibe others commands.
+#                                 -n1 : Stop the processes refresh after 1 time refreshed.
+#                            grep Cpu : display just one line in this top result, which represents some statistics about CPU.
+#                           cut -c 9- : Select just the characters after digit 9 in this line, in others words, the start of this line is cutted.
+#                            "0.0 us" : % of CPU used in user processes.
+#                            "0.0 ni" : % of CPU used in system low priority processes.
+#   awk '{printf("%.1f%%"), $1 + $3}' : Sum both values and return formatted with 2 decimal places using printf.
+#     
+#      sources: https://unix.stackexchange.com/questions/18918/linux-top-command-what-are-us-sy-ni-id-wa-hi-si-and-st-for-cpu-usage
+#               https://stackoverflow.com/questions/26004507/what-do-top-cpu-abbreviations-mean
+#               https://www.youtube.com/watch?v=KKpm9m4A3-w
+#               https://techdocs.broadcom.com/us/en/ca-enterprise-software/it-operations-management/performance-management/3-5/using/performance-metrics/cpu-utilization.html#:~:text=The%20CPU%20utilization%20metric%20is,period%20selected%20for%20the%20view.&text=is%20a%20term%20applied%20to,100%20to%20obtain%20a%20percentage.
+#               https://www.youtube.com/watch?v=Q9C7nW9vBV8
+# */
+
+
 # 7) The date and time of the last reboot:
 LBOOT=$(who -b | awk '{print $3 " " $4}')
+
+# /* 
+#                      who : show who is logged.
+#                       -b : show data and time of last login.
+#   awk '{print $3 " " $4}': show concatenation date and time.
+#     
+# */
 
 # 8) Whether LVM is active or not:
 CHECK_IF_THERE_IS_LVM=$(cat /etc/fstab | grep /dev/mapper/ | wc -l)
 LVMU=$( if [ ${CHECK_IF_THERE_IS_LVM} -eq 0 ]; then echo no; else echo yes; fi )
+
+# /* 
+#     
+#                                                      CHECK_IF_THERE_IS_LVM : report the amount of memory used in disk, in gigabytes.
+#                                                                        -Bg : set the output measurement unit of df. (g - GB).
+#                                                                 grep /dev/ : show just the line representing the mount point /dev/ which represents the full disk.
+#                                                              grep -v /boot : remove the line containing the mount point /boot information.
+#                                      awk '{FULLD += $2} END {print FULLD}' : Column 2 represents the full size of the partition. So it is summing all disk size of lines containing /dev.
+#  awk '{FULLD += $2} {USEDD += $3}  END {printf("%d"), (USEDD*100)/FULLD }' : Do the last action 2 times, again for 2 columns and also for 3 columns which represents the memory used, after with both values the use percentage is calculated. (USED DISK SPACE * 100 / FULL DISK SPACE).                  
+#     
+#      sources: https://linuxcommand.org/lc3_man_pages/df1.html
+#               
+# */
 
 # 9) The number of active connections:
 NUMBER_OF_ACTIVE_CONNECTIONS=$(netstat -t | grep ESTABLISHED | wc -l)
