@@ -175,14 +175,30 @@ MAC=$(cat /sys/class/net/*/address | head -n 1)
 #
 #                     hostname -I : Display IPv4.
 #             awk '{ print($1) }' : Show it.
-#    cat /sys/class/net/*/address : 
-#                       head -n 1 : 
+#    cat /sys/class/net/*/address : Display MAC Address.
+#                       head -n 1 : Display just the first line.
 #     
 # */
 
 # 12) The number of commands executed with the sudo program:
 SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
+
+# /* 
+#
+#      What is 'system md'? systemd-journald is a system service that collects 
+#      and stores logging data. It creates and maintains structured, indexed journals 
+#      based on logging information that is received from a variety of sources
+#
+#     journalctl : query system md. 
+#     _COMM=sudo : _COMM=<application name> To look for log messages from a specific application.
+#     ep COMMAND : Print just lines that represent SUDO commands.
+#          wc -l : Count amount of lines.
+#     
+#    source:  https://man7.org/linux/man-pages/man1/journalctl.1.html
+#             https://www.howtogeek.com/499623/how-to-use-journalctl-to-read-linux-system-logs/
+#
+# */
 
 
 ##############################################################
