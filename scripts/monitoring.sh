@@ -148,12 +148,37 @@ LVMU=$( if [ ${CHECK_IF_THERE_IS_LVM} -eq 0 ]; then echo no; else echo yes; fi )
 NUMBER_OF_ACTIVE_CONNECTIONS=$(netstat -t | grep ESTABLISHED | wc -l)
 NTCP=$(if [ ${NUMBER_OF_ACTIVE_CONNECTIONS} -eq 0 ]; then echo 0; else echo ${NUMBER_OF_ACTIVE_CONNECTIONS} ESTABLISHED; fi)
 
+# /* 
+#                                                   netstat -t : Print network connections with details.
+#                                             grep ESTABLISHED : Filter just the connections that are established.
+#                                                        wc -l : Count lines of output.
+#   if [ ${NUMBER_OF_ACTIVE_CONNECTIONS} -eq 0 ]; then echo 0; 
+#   else echo ${NUMBER_OF_ACTIVE_CONNECTIONS} ESTABLISHED; fi  : If there's more than 0 return the amount of conections, if not, return 0.
+#               
+# */
+
 # 10) The number of users using the server:
 ULOG=$(users | wc -w)
+
+# /* 
+#
+#         users: show logged users.
+#         wc -w: count words of line, returning the correct number of logged users.
+#     
+# */
 
 # 11) The IPv4 address of your server and its MAC (Media Access Control) address:
 IP=$(hostname -I | awk '{ print($1) }')
 MAC=$(cat /sys/class/net/*/address | head -n 1)
+
+# /* 
+#
+#                     hostname -I : Display IPv4.
+#             awk '{ print($1) }' : Show it.
+#    cat /sys/class/net/*/address : 
+#                       head -n 1 : 
+#     
+# */
 
 # 12) The number of commands executed with the sudo program:
 SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
