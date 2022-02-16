@@ -5,10 +5,34 @@
 ##############################################################
 
 # 1) The architecture of your operating system and its kernel version:
-ARCH=$(uname -snrvmo)
+ARCH=$(uname -srvmo)
+
+# /* 
+#     'uname': print system information.
+#          -s: print the kernel name.
+#          -r: kernel release. (published, because among a lot of versions just few final versions are 👌😎 "leased")
+#          -v: kernel version.
+#          -m: hardware (32bits or 64bits for example).
+#          -o: SO.  
+#     
+#      source: https://man7.org/linux/man-pages/man1/uname.1.html
+# */
+
 
 # 2) The number of physical processors:
 PCPU=$(cat /proc/cpuinfo | grep 'physical id' | uniq | wc -l)
+
+# /* 
+#     'cat /proc/cpuinfo': show us a lot of information about the physical CPU.
+#      grep 'physical id': the output will have more than 1 information group, because one CPU may have more than 1 cores, so we need to filter and show just, lines with the word 'physical id' present.
+#                   uniq : remove similar lines, this will show exactly just the PHYSICAL amount of CPU(s).
+#                  wc -l : return the amount of lines of stdout
+#                      -l: count lines of stdout.
+#     
+#      sources: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-proc-cpuinfo
+#               https://serverfault.com/questions/326035/what-does-siblings-mean-in-proc-cpuinfo/326050#:~:text=The%20number%20of%20siblings%20on,both%20additional%20cores%20and%20hyperthreading.
+# */
+
 
 # 3) The number of virtual processors:
 VCPU=$(cat /proc/cpuinfo | grep 'processor' | uniq | wc -l)
