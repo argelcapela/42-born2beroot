@@ -183,7 +183,6 @@ MAC=$(cat /sys/class/net/*/address | head -n 1)
 # 12) The number of commands executed with the sudo program:
 SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
-
 # /* 
 #
 #      What is 'system md'? systemd-journald is a system service that collects 
@@ -201,42 +200,43 @@ SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 # */
 
 
+
 ##############################################################
 ##                       Display                            ##
 ##############################################################
 
-#1#
+#1 The architecture of your operating system and its kernel version. #
 echo "#Archictecture: ${ARCH}"
 
-#2#
+#2 The number of physical processors. #
 echo "#CPU physical: ${PCPU}"
 
-#3#
+#3 The number of virtual processors. #
 echo "#vCPU: ${VCPU}"
 
-#4
+#4 The current available RAM on your server and its utilization rate as a percentage. #
 echo "#Memory Usage: ${USEDR}/${FULLR}MB (${PORUR}%)"
 
-#5
+#5 The current available memory on your server and its utilization rate as a percentage. #
 echo "#Disk Usage: ${USEDD}/${FULLD}G (${PORUD}%)"
 
-#6
+#6 The current utilization rate of your processors as a percentage. #
 echo "#CPU load: $USE_OF_CPU"
 
-#7#
+#7 The date and time of the last reboot #
 echo "#Last boot: ${LBOOT}"
 
-#8#
+#8 Whether LVM is active or not. #
 echo "#LVM use: $LVMU"
 
-#9#
+#9 The number of active connections. #
 echo "#Connexions TCP: $NTCP"
 
-#10#
+#10 The number of users using the server #
 echo "#User log: $ULOG"
 
-#11#
+#11 The IPv4 address of your server and its MAC (Media Access Control) address. #
 echo "#Network: IP ${IP} (${MAC})"
 
-#12#
+#12 The number of commands executed with the sudo program. #
 echo "#Sudo: $SUDO cmd"
