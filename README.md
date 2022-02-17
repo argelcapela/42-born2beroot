@@ -36,7 +36,7 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 <div class="col-12">
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<a href="#overview">42-born2beroot-guide (Google Slides)</a>
+<a href="#overview">42-born2beroot-study</a>
 <br>		
 <div class="col-12">
 	
@@ -93,7 +93,7 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 
 <a href="https://youtu.be/D9G1VOjN_84" class="hide-on-portfolio" target="_BLANK"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
-<i>Fique a vontade para conferir meu guia sobre a 42-born2beroot, clicando no icone bonitinho abaixo.</i><br><br>
+<i>Fique a vontade para conferir o meu estudo sobre o 42-born2beroot, clicando no icone bonitinho abaixo.</i><br><br>
 <a href="https://docs.google.com/presentation/d/1VWdLQyzHBcBy6y3QFPF3tIc-R_6kzcePYOegFBBWdaQ/edit?usp=sharing" target="_BLANK"><img src="https://i.imgur.com/feIp2xa.png" alt="conferir estudo"></a>
 <br>
 </div>   
