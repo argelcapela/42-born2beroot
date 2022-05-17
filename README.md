@@ -27,16 +27,22 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 <div class="col-12">
 
 # 🚀 Rodando o projeto:<br>
-<b>Links:</b>
-<li>Repositório Github: <a href="https://github.com/argelcapela/42-born2beroot">Link</a></li>
-<li>Intra 42SP: <a href="https://projects.intra.42.fr/born2beroot/acapela-">Link</a></li>
+<i>No momento, o arquivo .vdi ainda não está presente dentro do repositório do meu 42-born2beroot, mas em breve, uma versão pequena da VM será adicionada, e disponibilizda para testes.</i>
+	
+<ol>
+	<li>Clone o repositório https://github.com/argelcapela/42-born2beroot.git</li>
+	<li>Baixe e Instale o software <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>.</li>
+	<li>Procure a opção abrir ou acrescentar maquina virtual e selecione o arquivo .vbox, dentro da pasta 'vm', dentro do repositório.</li>
+	<li>Seja feliz para brincar no CentOS 7! 😁😎</li>
+</ol>
+
 	
 </div>
 <br>
 <div class="col-12">
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<a href="#overview">42-born2beroot-study</a>
+EM BREVE
 <br>		
 <div class="col-12">
 	
@@ -83,17 +89,3 @@ Também gerenciamento de usuários e suas permissões. Aprende-se sobre sysadmin
 <div class="col-12">
 <p>Não esqueça de dar um ⭐️ se você gostou, ou se esse repositório te ajudou de alguma maneira, isso irá me ajudar muito! Obrigado, você é top! 😁👍</p>
 </div>
-	
-
-<br><br>
-	
-<div align="center" id="overview">
-
-# 👑
-
-<a href="https://youtu.be/D9G1VOjN_84" class="hide-on-portfolio" target="_BLANK"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
-<br><br>
-<i>Fique a vontade para conferir o meu estudo sobre o 42-born2beroot, clicando no icone bonitinho abaixo.</i><br><br>
-<a href="https://docs.google.com/presentation/d/1VWdLQyzHBcBy6y3QFPF3tIc-R_6kzcePYOegFBBWdaQ/edit?usp=sharing" target="_BLANK"><img src="https://i.imgur.com/feIp2xa.png" alt="conferir estudo"></a>
-<br>
-</div>   
